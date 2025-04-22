@@ -3,6 +3,8 @@ kind: Certificate
 metadata:
   name: gorizond-wildcard-cert
   namespace: default
+  annotations:
+    cert-manager.io/allow-direct-injection: "true"
 spec:
   secretName: gorizond-wildcard-cert
   issuerRef:
