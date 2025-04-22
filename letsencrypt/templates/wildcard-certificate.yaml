@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: gorizond-wildcard-cert
+  namespace: default
+spec:
+  secretName: gorizond-wildcard-cert
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer 
+  dnsNames:
+    - "*.{{ .Values.domain }}"
+    - "{{ .Values.domain }}"

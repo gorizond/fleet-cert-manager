@@ -1,7 +1,13 @@
 defaultNamespace: cert-manager
 
+dependOn:
+  - selector:
+      matchLabels:
+        app: cert-manager
+
 helm:
   chart: ./
   values:
+    domain: ${ if hasKey .ClusterAnnotations "domain" }${ get .ClusterAnnotations "domain" }${ else }example.com${ end }
     cloudflare:
       email: ${ if hasKey .ClusterAnnotations "cloudflare-email" }${ get .ClusterAnnotations "cloudflare-email" }${ else }my@email.com${ end }
