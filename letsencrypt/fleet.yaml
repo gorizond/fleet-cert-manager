@@ -1,0 +1,7 @@
+defaultNamespace: cert-manager
+
+helm:
+  chart: .
+  values:
+    cloudflare:
+      email: { $.ClusterAnnotations.cloudflare-email }
