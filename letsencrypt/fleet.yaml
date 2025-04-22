@@ -4,4 +4,4 @@ helm:
   chart: .
   values:
     cloudflare:
-      email: ${ get .ClusterAnnotations "cloudflare-email" }
+      email: '${ get .ClusterAnnotations "cloudflare-email" }'
