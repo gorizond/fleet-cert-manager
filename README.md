@@ -1,2 +1,2 @@
 # fleet-cert-manager
-cert-manager for gorizond cluster and rancher
+cert-manager with wildcard cert for gorizond cluster and rancher
