@@ -4,6 +4,7 @@ helm:
   releaseName: cert-manager
   repo: https://charts.jetstack.io
   chart: cert-manager
+  version: 1.17.1
   values:
     installCRDs: true
     prometheus:
