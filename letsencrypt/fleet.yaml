@@ -9,5 +9,9 @@ helm:
   chart: ./
   values:
     domain: ${ if hasKey .ClusterAnnotations "domain" }${ get .ClusterAnnotations "domain" }${ else }example.com${ end }
+    gorizond: 
+      domain:
+        headscale: ${ if hasKey .ClusterAnnotations "gorizond.domain.headscale" }${ get .ClusterAnnotations "gorizond.domain.headscale" }${ else }headscale.public.gorizond.io${ end }
+        k3s: ${ if hasKey .ClusterAnnotations "gorizond.domain.k3s" }${ get .ClusterAnnotations "gorizond.domain.k3s" }${ else }k3s.public.gorizond.io${ end }
     cloudflare:
       email: ${ if hasKey .ClusterAnnotations "cloudflare-email" }${ get .ClusterAnnotations "cloudflare-email" }${ else }my@email.com${ end }

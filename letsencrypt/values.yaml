@@ -1,3 +1,7 @@
 domain: ""
 cloudlfare:
   email: ""
+gorizond: 
+  domain:
+    headscale: ""
+    k3s: ""
