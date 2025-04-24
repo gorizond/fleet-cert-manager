@@ -11,8 +11,6 @@ spec:
     name: letsencrypt-prod
     kind: ClusterIssuer
   dnsNames:
-    - "*.{{ .Values.domain }}"
-    - "{{ .Values.domain }}"
     - "*.{{ .Values.gorizond.domain.headscale }}"
     - "{{ .Values.gorizond.domain.headscale }}"
     - "*.{{ .Values.gorizond.domain.k3s }}"
