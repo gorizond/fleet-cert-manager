@@ -9,7 +9,11 @@ spec:
   secretName: gorizond-wildcard-cert
   issuerRef:
     name: letsencrypt-prod
-    kind: ClusterIssuer 
+    kind: ClusterIssuer
   dnsNames:
     - "*.{{ .Values.domain }}"
     - "{{ .Values.domain }}"
+    - "*.{{ .Values.gorizond.domain.headscale }}"
+    - "{{ .Values.gorizond.domain.headscale }}"
+    - "*.{{ .Values.gorizond.domain.k3s }}"
+    - "{{ .Values.gorizond.domain.k3s }}"
